@@ -1,0 +1,27 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn.lock
+pnpm-lock.yaml
+
+# Rust / Anchor
+target/
+# keep these two generated artifacts for clients:
+!contracts/cap_guard/target/idl/
+!contracts/cap_guard/target/idl/cap_guard.json
+!contracts/cap_guard/target/types/
+!contracts/cap_guard/target/types/cap_guard.ts
+
+# Solana keypairs (NEVER commit)
+**/*-keypair.json
+**/*.json.key
+*.json.key
+*.key
+*.pem
+*.der
+
+# Env & system
+.env
+.env.*
+.DS_Store
+*.swp
