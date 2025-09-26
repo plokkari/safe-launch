@@ -1,0 +1,29 @@
+{
+  "name": "cap_guard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "anchor:build": "ANCHOR_USE_DOCKER=1 anchor build -v",
+    "idl:patch": "node scripts/patch_idl.js",
+    "build:idl": "npm run anchor:build && npm run idl:patch",
+    "test": "cross-env TS_NODE_TRANSPILE_ONLY=1 mocha -r ts-node/register tests/**/*.spec.ts -t 180000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@coral-xyz/anchor": "^0.31.1",
+    "bn.js": "^5.2.2",
+    "cross-env": "^10.0.0",
+    "mocha": "^10.8.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@solana/spl-token": "^0.4.14"
+  }
+}

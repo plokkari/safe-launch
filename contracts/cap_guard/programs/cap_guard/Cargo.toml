@@ -1,0 +1,24 @@
+[package]
+name = "cap_guard"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "cap_guard"
+crate-type = ["cdylib", "lib"]
+
+[dependencies]
+anchor-lang = "0.31.1"
+anchor-spl  = "0.31.1"
+
+[features]
+default = ["idl-build"]       # 👈 turn it on by default
+no-entrypoint = []
+cpi = []
+no-idl = []                   # (optional; keep if you need it for special builds)
+anchor-debug = []
+no-log-ix-name = []
+custom-heap = []
+custom-panic = []
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
+
